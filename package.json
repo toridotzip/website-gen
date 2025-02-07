@@ -2,10 +2,11 @@
   "name": "website-gen",
   "version": "1.0.0",
   "description": "",
-  "license": "ISC",
+  "license": "",
   "author": "",
   "type": "commonjs",
   "main": "index.js",
+  "private": true,
   "scripts": {
     "test": "echo \"Error: no test specified\" && exit 1",
     "dev": "npx @tailwindcss/cli -i ./src/input.css -o ./src/output.css --watch"
@@ -13,5 +14,14 @@
   "dependencies": {
     "@tailwindcss/cli": "^4.0.4",
     "tailwindcss": "^4.0.4"
+  },
+  "devDependencies": {
+    "prettier": "^3.4.2",
+    "prettier-plugin-tailwindcss": "^0.6.11"
+  },
+  "prettier": {
+    "plugins": ["prettier-plugin-tailwindcss"],
+    "tailwindStylesheet": "./src/input.css",
+    "useTabs": true
   }
 }
