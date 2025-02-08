@@ -377,6 +377,7 @@
       --font-mono--font-variation-settings
     );
     --font-display: "Departure Mono", sans-serif;
+    --color-bg: ;
   }
 }
 @layer base {
@@ -548,20 +549,26 @@
   .w-full {
     width: 100%;
   }
+  .max-w-2xl {
+    max-width: var(--container-2xl);
+  }
   .max-w-xl {
     max-width: var(--container-xl);
   }
   .grow {
     flex-grow: 1;
   }
-  .list-inside {
-    list-style-position: inside;
+  .transform {
+    transform: var(--tw-rotate-x) var(--tw-rotate-y) var(--tw-rotate-z) var(--tw-skew-x) var(--tw-skew-y);
   }
   .flex-col {
     flex-direction: column;
   }
   .flex-row {
     flex-direction: row;
+  }
+  .flex-row-reverse {
+    flex-direction: row-reverse;
   }
   .content-end {
     align-content: flex-end;
@@ -578,21 +585,8 @@
   .justify-center {
     justify-content: center;
   }
-  .gap-4 {
-    gap: calc(var(--spacing) * 4);
-  }
-  .space-y-1 {
-    :where(& > :not(:last-child)) {
-      --tw-space-y-reverse: 0;
-      margin-block-start: calc(calc(var(--spacing) * 1) * var(--tw-space-y-reverse));
-      margin-block-end: calc(calc(var(--spacing) * 1) * calc(1 - var(--tw-space-y-reverse)));
-    }
-  }
   .bg-slate-200 {
     background-color: var(--color-slate-200);
-  }
-  .bg-slate-950 {
-    background-color: var(--color-slate-950);
   }
   .fill-slate-400 {
     fill: var(--color-slate-400);
@@ -606,8 +600,8 @@
   .p-2\.5 {
     padding: calc(var(--spacing) * 2.5);
   }
-  .px-8 {
-    padding-inline: calc(var(--spacing) * 8);
+  .px-4 {
+    padding-inline: calc(var(--spacing) * 4);
   }
   .py-2 {
     padding-block: calc(var(--spacing) * 2);
@@ -633,17 +627,11 @@
   .pb-2 {
     padding-bottom: calc(var(--spacing) * 2);
   }
-  .pb-3 {
-    padding-bottom: calc(var(--spacing) * 3);
-  }
   .pb-5 {
     padding-bottom: calc(var(--spacing) * 5);
   }
   .pb-8 {
     padding-bottom: calc(var(--spacing) * 8);
-  }
-  .pl-1 {
-    padding-left: calc(var(--spacing) * 1);
   }
   .font-display {
     font-family: var(--font-display);
@@ -667,12 +655,6 @@
     --tw-font-weight: var(--font-weight-normal);
     font-weight: var(--font-weight-normal);
   }
-  .text-slate-200 {
-    color: var(--color-slate-200);
-  }
-  .text-slate-400 {
-    color: var(--color-slate-400);
-  }
   .text-slate-600 {
     color: var(--color-slate-600);
   }
@@ -686,14 +668,6 @@
     --tw-backdrop-blur: blur(var(--blur-sm));
     -webkit-backdrop-filter: var(--tw-backdrop-blur,) var(--tw-backdrop-brightness,) var(--tw-backdrop-contrast,) var(--tw-backdrop-grayscale,) var(--tw-backdrop-hue-rotate,) var(--tw-backdrop-invert,) var(--tw-backdrop-opacity,) var(--tw-backdrop-saturate,) var(--tw-backdrop-sepia,);
     backdrop-filter: var(--tw-backdrop-blur,) var(--tw-backdrop-brightness,) var(--tw-backdrop-contrast,) var(--tw-backdrop-grayscale,) var(--tw-backdrop-hue-rotate,) var(--tw-backdrop-invert,) var(--tw-backdrop-opacity,) var(--tw-backdrop-saturate,) var(--tw-backdrop-sepia,);
-  }
-  .marker\:text-slate-950 {
-    & *::marker {
-      color: var(--color-slate-950);
-    }
-    &::marker {
-      color: var(--color-slate-950);
-    }
   }
   .selection\:text-violet-400 {
     & *::selection {
@@ -739,16 +713,6 @@
       color: var(--color-slate-300);
     }
   }
-  .dark\:marker\:text-slate-200 {
-    &:where(.dark, .dark *) {
-      & *::marker {
-        color: var(--color-slate-200);
-      }
-      &::marker {
-        color: var(--color-slate-200);
-      }
-    }
-  }
 }
 @font-face {
   font-family: Departure Mono;
@@ -762,17 +726,13 @@
 }
 @layer base {
   a:hover {
-    color: var(--color-violet-300);
+    color: var(--color-violet-400);
   }
   main a {
-    color: var(--color-violet-400);
     text-decoration-line: underline;
     text-decoration-style: dashed;
     text-decoration-thickness: 1px;
     text-underline-offset: 4px;
-  }
-  main a:after {
-    content: " \2197\FE0E";
   }
 }
 @keyframes spin {
@@ -801,10 +761,30 @@
     animation-timing-function: cubic-bezier(0, 0, 0.2, 1);
   }
 }
-@property --tw-space-y-reverse {
+@property --tw-rotate-x {
   syntax: "*";
   inherits: false;
-  initial-value: 0;
+  initial-value: rotateX(0);
+}
+@property --tw-rotate-y {
+  syntax: "*";
+  inherits: false;
+  initial-value: rotateY(0);
+}
+@property --tw-rotate-z {
+  syntax: "*";
+  inherits: false;
+  initial-value: rotateZ(0);
+}
+@property --tw-skew-x {
+  syntax: "*";
+  inherits: false;
+  initial-value: skewX(0);
+}
+@property --tw-skew-y {
+  syntax: "*";
+  inherits: false;
+  initial-value: skewY(0);
 }
 @property --tw-font-weight {
   syntax: "*";
