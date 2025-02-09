@@ -552,6 +552,9 @@
   .relative {
     position: relative;
   }
+  .mx-1 {
+    margin-inline: calc(var(--spacing) * 1);
+  }
   .mx-auto {
     margin-inline: auto;
   }
@@ -573,6 +576,14 @@
   .table {
     display: table;
   }
+  .size-5 {
+    width: calc(var(--spacing) * 5);
+    height: calc(var(--spacing) * 5);
+  }
+  .size-6 {
+    width: calc(var(--spacing) * 6);
+    height: calc(var(--spacing) * 6);
+  }
   .h-5 {
     height: calc(var(--spacing) * 5);
   }
@@ -590,9 +601,6 @@
   }
   .max-w-2xl {
     max-width: var(--container-2xl);
-  }
-  .max-w-xl {
-    max-width: var(--container-xl);
   }
   .flex-grow {
     flex-grow: 1;
@@ -621,6 +629,9 @@
   .content-end {
     align-content: flex-end;
   }
+  .items-baseline {
+    align-items: baseline;
+  }
   .items-center {
     align-items: center;
   }
@@ -633,6 +644,9 @@
   .justify-center {
     justify-content: center;
   }
+  .self-center {
+    align-self: center;
+  }
   .border {
     border-style: var(--tw-border-style);
     border-width: 1px;
@@ -640,11 +654,35 @@
   .bg-slate-200 {
     background-color: var(--color-slate-200);
   }
+  .fill-silver-300 {
+    fill: var(--color-silver-300);
+  }
+  .fill-silver-400 {
+    fill: var(--color-silver-400);
+  }
+  .fill-silver-500 {
+    fill: var(--color-silver-500);
+  }
+  .fill-silver-800 {
+    fill: var(--color-silver-800);
+  }
   .fill-slate-400 {
     fill: var(--color-slate-400);
   }
+  .stroke-silver-300 {
+    stroke: var(--color-silver-300);
+  }
+  .stroke-silver-500 {
+    stroke: var(--color-silver-500);
+  }
+  .stroke-silver-800 {
+    stroke: var(--color-silver-800);
+  }
   .stroke-slate-400 {
     stroke: var(--color-slate-400);
+  }
+  .stroke-1 {
+    stroke-width: 1;
   }
   .stroke-2 {
     stroke-width: 2;
@@ -669,9 +707,6 @@
   }
   .pt-4 {
     padding-top: calc(var(--spacing) * 4);
-  }
-  .pt-10 {
-    padding-top: calc(var(--spacing) * 10);
   }
   .pt-15 {
     padding-top: calc(var(--spacing) * 15);
@@ -702,6 +737,12 @@
     font-size: var(--text-lg);
     line-height: var(--tw-leading, var(--text-lg--line-height));
   }
+  .text-\[11px\] {
+    font-size: 11px;
+  }
+  .text-\[22px\] {
+    font-size: 22px;
+  }
   .font-medium {
     --tw-font-weight: var(--font-weight-medium);
     font-weight: var(--font-weight-medium);
@@ -710,14 +751,20 @@
     --tw-font-weight: var(--font-weight-normal);
     font-weight: var(--font-weight-normal);
   }
+  .text-\[22\] {
+    color: 22;
+  }
   .text-silver-600 {
     color: var(--color-silver-600);
   }
-  .text-slate-600 {
-    color: var(--color-slate-600);
+  .text-silver-700 {
+    color: var(--color-silver-700);
   }
-  .text-slate-950 {
-    color: var(--color-slate-950);
+  .text-silver-800 {
+    color: var(--color-silver-800);
+  }
+  .text-silver-900 {
+    color: var(--color-silver-900);
   }
   .lowercase {
     text-transform: lowercase;
@@ -753,20 +800,39 @@
       color: var(--color-amulet-400);
     }
   }
-  .selection\:text-amulet-500 {
-    & *::selection {
-      color: var(--color-amulet-500);
-    }
-    &::selection {
-      color: var(--color-amulet-500);
+  .hover\:fill-silver-100 {
+    &:hover {
+      @media (hover: hover) {
+        fill: var(--color-silver-100);
+      }
     }
   }
-  .selection\:text-violet-400 {
-    & *::selection {
-      color: var(--color-violet-400);
+  .hover\:fill-silver-200 {
+    &:hover {
+      @media (hover: hover) {
+        fill: var(--color-silver-200);
+      }
     }
-    &::selection {
-      color: var(--color-violet-400);
+  }
+  .hover\:fill-silver-600 {
+    &:hover {
+      @media (hover: hover) {
+        fill: var(--color-silver-600);
+      }
+    }
+  }
+  .hover\:fill-silver-700 {
+    &:hover {
+      @media (hover: hover) {
+        fill: var(--color-silver-700);
+      }
+    }
+  }
+  .hover\:fill-silver-800 {
+    &:hover {
+      @media (hover: hover) {
+        fill: var(--color-silver-800);
+      }
     }
   }
   .hover\:fill-slate-300 {
@@ -783,6 +849,27 @@
       }
     }
   }
+  .hover\:stroke-silver-100 {
+    &:hover {
+      @media (hover: hover) {
+        stroke: var(--color-silver-100);
+      }
+    }
+  }
+  .hover\:stroke-silver-200 {
+    &:hover {
+      @media (hover: hover) {
+        stroke: var(--color-silver-200);
+      }
+    }
+  }
+  .hover\:stroke-silver-400 {
+    &:hover {
+      @media (hover: hover) {
+        stroke: var(--color-silver-400);
+      }
+    }
+  }
   .hover\:stroke-slate-300 {
     &:hover {
       @media (hover: hover) {
@@ -795,9 +882,14 @@
       background-color: var(--color-silver-900);
     }
   }
-  .dark\:bg-slate-950 {
+  .dark\:fill-silver-100 {
     &:where(.dark, .dark *) {
-      background-color: var(--color-slate-950);
+      fill: var(--color-silver-100);
+    }
+  }
+  .dark\:stroke-silver-100 {
+    &:where(.dark, .dark *) {
+      stroke: var(--color-silver-100);
     }
   }
   .dark\:text-silver-100 {
@@ -808,36 +900,6 @@
   .dark\:text-silver-500 {
     &:where(.dark, .dark *) {
       color: var(--color-silver-500);
-    }
-  }
-  .dark\:text-slate-200 {
-    &:where(.dark, .dark *) {
-      color: var(--color-slate-200);
-    }
-  }
-  .dark\:text-slate-300 {
-    &:where(.dark, .dark *) {
-      color: var(--color-slate-300);
-    }
-  }
-  .dark\:selection\:text-amulet-300 {
-    &:where(.dark, .dark *) {
-      & *::selection {
-        color: var(--color-amulet-300);
-      }
-      &::selection {
-        color: var(--color-amulet-300);
-      }
-    }
-  }
-  .dark\:selection\:text-amulet-400 {
-    &:where(.dark, .dark *) {
-      & *::selection {
-        color: var(--color-amulet-400);
-      }
-      &::selection {
-        color: var(--color-amulet-400);
-      }
     }
   }
   .dark\:selection\:text-amulet-500 {
