@@ -59,3 +59,21 @@
         @apply transition duration-300 ease-in-out
     }
 }
+
+@layer components {
+    .body {
+        @apply min-h-dvh flex mx-auto max-w-2xl flex-col justify-between lowercase font-mono font-normal bg-silver-300 dark:bg-silver-950 text-silver-900 dark:text-silver-100 selection:text-accent transition-colors duration-300;
+    }
+
+    .nav {
+        @apply w-full max-w-2xl px-4 pt-2 pb-1 max-h-9 fixed flex flex-row items-center justify-between text-[22px] backdrop-blur-sm;
+    }
+
+    .content {
+        @apply flex flex-col items-start justify-center grow py-5 px-4 text-base;
+    }
+
+    .footer {
+        @apply px-4 pb-2 flex flex-row justify-between font-mono text-silver-700 dark:text-silver-500 text-base;
+    }
+}
