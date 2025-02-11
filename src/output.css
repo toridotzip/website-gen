@@ -555,8 +555,17 @@
   .mx-1 {
     margin-inline: calc(var(--spacing) * 1);
   }
+  .mx-4 {
+    margin-inline: calc(var(--spacing) * 4);
+  }
   .mx-auto {
     margin-inline: auto;
+  }
+  .my-2 {
+    margin-block: calc(var(--spacing) * 2);
+  }
+  .my-4 {
+    margin-block: calc(var(--spacing) * 4);
   }
   .block {
     display: block;
@@ -582,6 +591,9 @@
   }
   .h-5 {
     height: calc(var(--spacing) * 5);
+  }
+  .h-px {
+    height: 1px;
   }
   .max-h-9 {
     max-height: calc(var(--spacing) * 9);
@@ -616,6 +628,12 @@
   .resize {
     resize: both;
   }
+  .list-inside {
+    list-style-position: inside;
+  }
+  .list-none {
+    list-style-type: none;
+  }
   .flex-col {
     flex-direction: column;
   }
@@ -646,6 +664,9 @@
   .justify-evenly {
     justify-content: space-evenly;
   }
+  .justify-start {
+    justify-content: flex-start;
+  }
   .justify-stretch {
     justify-content: stretch;
   }
@@ -655,6 +676,16 @@
   .border {
     border-style: var(--tw-border-style);
     border-width: 1px;
+  }
+  .border-0 {
+    border-style: var(--tw-border-style);
+    border-width: 0px;
+  }
+  .bg-silver-600 {
+    background-color: var(--color-silver-600);
+  }
+  .bg-silver-600\/50 {
+    background-color: color-mix(in oklab, var(--color-silver-600) 50%, transparent);
   }
   .bg-slate-200 {
     background-color: var(--color-slate-200);
@@ -692,6 +723,9 @@
   .py-2 {
     padding-block: calc(var(--spacing) * 2);
   }
+  .py-4 {
+    padding-block: calc(var(--spacing) * 4);
+  }
   .py-5 {
     padding-block: calc(var(--spacing) * 5);
   }
@@ -718,6 +752,9 @@
   }
   .pb-8 {
     padding-bottom: calc(var(--spacing) * 8);
+  }
+  .pl-4 {
+    padding-left: calc(var(--spacing) * 4);
   }
   .font-display {
     font-family: var(--font-display);
@@ -789,6 +826,16 @@
     --tw-duration: 500ms;
     transition-duration: 500ms;
   }
+  .\*\:pb-4 {
+    :is(& > *) {
+      padding-bottom: calc(var(--spacing) * 4);
+    }
+  }
+  .\*\:pl-4 {
+    :is(& > *) {
+      padding-left: calc(var(--spacing) * 4);
+    }
+  }
   .selection\:text-amulet-400 {
     & *::selection {
       color: var(--color-amulet-400);
@@ -837,6 +884,16 @@
       @media (hover: hover) {
         stroke: var(--color-slate-300);
       }
+    }
+  }
+  .dark\:bg-silver-500 {
+    &:where(.dark, .dark *) {
+      background-color: var(--color-silver-500);
+    }
+  }
+  .dark\:bg-silver-500\/50 {
+    &:where(.dark, .dark *) {
+      background-color: color-mix(in oklab, var(--color-silver-500) 50%, transparent);
     }
   }
   .dark\:bg-silver-900 {
