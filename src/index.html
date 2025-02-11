@@ -1,5 +1,5 @@
 <!doctype html>
-<html lang="en" class="dark">
+<html lang="en">
 
 <head>
     <meta charset="UTF-8">
@@ -8,13 +8,14 @@
     <title>Viktoria Köhler</title>
 </head>
 
-<body class="min-h-dvh flex mx-auto max-w-2xl flex-col justify-between lowercase font-mono font-normal bg-slate-200 dark:bg-silver-900 text-silver-800 dark:text-silver-100 selection:text-amulet-400 dark:selection:text-amulet-500 transition-colors duration-300">
+<body class="lowercase font-mono font-normal bg-silver-300 dark:bg-silver-950 text-silver-900 dark:text-silver-100 selection:text-accent transition-colors duration-300">
+    <div class="min-h-dvh flex mx-auto max-w-2xl flex-col justify-between ">
     <!-- Navbar -->
     <nav class="w-full max-w-2xl px-4 pt-2 pb-1 max-h-9 fixed flex flex-row items-center justify-between text-[22px] backdrop-blur-sm">
         <a href="index.html" class="font-display ">Viktoria Köhler</a>
         <!-- Dark mode toggle -->
         <button id="theme-toggle" type="button" class="p-2.5">
-            <svg id="theme-toggle-dark-icon" viewBox="0 0 24 24" class="hidden w-5 h-5 fill-silver-400 hover:fill-silver-800" xmlns="http://www.w3.org/2000/svg">
+            <svg id="theme-toggle-dark-icon" viewBox="0 0 24 24" class="hidden w-5 h-5 fill-silver-500 hover:fill-silver-800" xmlns="http://www.w3.org/2000/svg">
                 <path stroke-linecap="round" stroke-linejoin="round" d="M21.752 15.002A9.72 9.72 0 0 1 18 15.75c-5.385 0-9.75-4.365-9.75-9.75 0-1.33.266-2.597.748-3.752A9.753 9.753 0 0 0 3 11.25C3 16.635 7.365 21 12.75 21a9.753 9.753 0 0 0 9.002-5.998Z"/>
             </svg>
             <svg id="theme-toggle-light-icon" viewBox="0 0 24 24" class="hidden w-5 h-5 fill-silver-500 hover:fill-silver-100 stroke-silver-500 hover:stroke-silver-100 stroke-2" xmlns="http://www.w3.org/2000/svg">
@@ -25,9 +26,9 @@
     <!-- Content -->
     <main class="flex flex-col items-start justify-center grow py-5 px-4 text-base">
         <div class="pt-15 pb-8 content-end">
-            <h1 class="text-[22px] font-display inline-flex items-baseline">
+            <h1 class="font-display text-[22px] inline-flex items-baseline">
                 <span>Hi!</span>
-                <svg class="mx-1 size-5 self-center fill-silver-800 dark:fill-silver-100" xmlns="http://www.w3.org/2000/svg"
+                <svg class="mx-1 size-5 self-center fill-silver-900 dark:fill-silver-100" xmlns="http://www.w3.org/2000/svg"
                     viewBox="0 0 24 24">
                     <path stroke-linecap="round" stroke-linejoin="round"
                         d="M9.813 15.904 9 18.75l-.813-2.846a4.5 4.5 0 0 0-3.09-3.09L2.25 12l2.846-.813a4.5 4.5 0 0 0 3.09-3.09L9 5.25l.813 2.846a4.5 4.5 0 0 0 3.09 3.09L15.75 12l-2.846.813a4.5 4.5 0 0 0-3.09 3.09ZM18.259 8.715 18 9.75l-.259-1.035a3.375 3.375 0 0 0-2.455-2.456L14.25 6l1.036-.259a3.375 3.375 0 0 0 2.455-2.456L18 2.25l.259 1.035a3.375 3.375 0 0 0 2.456 2.456L21.75 6l-1.035.259a3.375 3.375 0 0 0-2.456 2.456ZM16.894 20.567 16.5 21.75l-.394-1.183a2.25 2.25 0 0 0-1.423-1.423L13.5 18.75l1.183-.394a2.25 2.25 0 0 0 1.423-1.423l.394-1.183.394 1.183a2.25 2.25 0 0 0 1.423 1.423l1.183.394-1.183.394a2.25 2.25 0 0 0-1.423 1.423Z" />
@@ -37,9 +38,10 @@
                 My name is Viktoria, but I prefer Tori. I am a portrait <a href="photo.html">photographer</a> and <a href="arts.html">digital artist</a>. This is my main hub on the internet, where you can find some examples of my <a href="work.html">work</a>, as well as <a href="notes.html">collections</a> of things I am currently interested in. Outside of this site, you can find me on <a href="https://are.na/viktoria-kohler/" target="_blank">Are.na</a>, <a href="https://github.com/toridotzip" target="_blank">GitHub</a>,  <a href="https://social.xenofem.me/users/etc_vi" target="_blank">Bluesky</a>, or IRC if you search a bit. You can also <a href="mailto:mail@tori.zip" target="_blank">email</a> me.
             </p>
         </div>
+    
     </main>
     <!-- Footer -->
-    <footer class="px-4 pb-2 flex flex-row justify-between font-mono text-silver-600 dark:text-silver-500 text-base">
+    <footer class="px-4 pb-2 flex flex-row justify-between font-mono text-silver-700 dark:text-silver-500 text-base">
         <div class="flex flex-row justify-between">
             <a class="pr-4" href="imprint.html">Imprint</a>
             <a href="https://github.com/toridotzip/website-gen" target="_blank">Source</a>
@@ -48,7 +50,7 @@
             <a href="index.html">~</a>/
         </span>
     </footer>
-    
+    </div>
     <script src="modetoggle.js"></script>
 </body>
 </html>
