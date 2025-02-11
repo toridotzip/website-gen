@@ -580,15 +580,14 @@
     width: calc(var(--spacing) * 5);
     height: calc(var(--spacing) * 5);
   }
-  .size-6 {
-    width: calc(var(--spacing) * 6);
-    height: calc(var(--spacing) * 6);
-  }
   .h-5 {
     height: calc(var(--spacing) * 5);
   }
   .max-h-9 {
     max-height: calc(var(--spacing) * 9);
+  }
+  .min-h-dvh {
+    min-height: 100dvh;
   }
   .min-h-screen {
     min-height: 100vh;
@@ -644,6 +643,12 @@
   .justify-center {
     justify-content: center;
   }
+  .justify-evenly {
+    justify-content: space-evenly;
+  }
+  .justify-stretch {
+    justify-content: stretch;
+  }
   .self-center {
     align-self: center;
   }
@@ -653,9 +658,6 @@
   }
   .bg-slate-200 {
     background-color: var(--color-slate-200);
-  }
-  .fill-silver-300 {
-    fill: var(--color-silver-300);
   }
   .fill-silver-400 {
     fill: var(--color-silver-400);
@@ -669,20 +671,11 @@
   .fill-slate-400 {
     fill: var(--color-slate-400);
   }
-  .stroke-silver-300 {
-    stroke: var(--color-silver-300);
-  }
   .stroke-silver-500 {
     stroke: var(--color-silver-500);
   }
-  .stroke-silver-800 {
-    stroke: var(--color-silver-800);
-  }
   .stroke-slate-400 {
     stroke: var(--color-slate-400);
-  }
-  .stroke-1 {
-    stroke-width: 1;
   }
   .stroke-2 {
     stroke-width: 2;
@@ -711,6 +704,9 @@
   .pt-15 {
     padding-top: calc(var(--spacing) * 15);
   }
+  .pr-4 {
+    padding-right: calc(var(--spacing) * 4);
+  }
   .pb-1 {
     padding-bottom: calc(var(--spacing) * 1);
   }
@@ -737,9 +733,6 @@
     font-size: var(--text-lg);
     line-height: var(--tw-leading, var(--text-lg--line-height));
   }
-  .text-\[11px\] {
-    font-size: 11px;
-  }
   .text-\[22px\] {
     font-size: 22px;
   }
@@ -751,20 +744,11 @@
     --tw-font-weight: var(--font-weight-normal);
     font-weight: var(--font-weight-normal);
   }
-  .text-\[22\] {
-    color: 22;
-  }
   .text-silver-600 {
     color: var(--color-silver-600);
   }
-  .text-silver-700 {
-    color: var(--color-silver-700);
-  }
   .text-silver-800 {
     color: var(--color-silver-800);
-  }
-  .text-silver-900 {
-    color: var(--color-silver-900);
   }
   .lowercase {
     text-transform: lowercase;
@@ -792,6 +776,19 @@
     -webkit-backdrop-filter: var(--tw-backdrop-blur,) var(--tw-backdrop-brightness,) var(--tw-backdrop-contrast,) var(--tw-backdrop-grayscale,) var(--tw-backdrop-hue-rotate,) var(--tw-backdrop-invert,) var(--tw-backdrop-opacity,) var(--tw-backdrop-saturate,) var(--tw-backdrop-sepia,);
     backdrop-filter: var(--tw-backdrop-blur,) var(--tw-backdrop-brightness,) var(--tw-backdrop-contrast,) var(--tw-backdrop-grayscale,) var(--tw-backdrop-hue-rotate,) var(--tw-backdrop-invert,) var(--tw-backdrop-opacity,) var(--tw-backdrop-saturate,) var(--tw-backdrop-sepia,);
   }
+  .transition-colors {
+    transition-property: color, background-color, border-color, outline-color, text-decoration-color, fill, stroke, --tw-gradient-from, --tw-gradient-via, --tw-gradient-to;
+    transition-timing-function: var(--tw-ease, var(--default-transition-timing-function));
+    transition-duration: var(--tw-duration, var(--default-transition-duration));
+  }
+  .duration-300 {
+    --tw-duration: 300ms;
+    transition-duration: 300ms;
+  }
+  .duration-500 {
+    --tw-duration: 500ms;
+    transition-duration: 500ms;
+  }
   .selection\:text-amulet-400 {
     & *::selection {
       color: var(--color-amulet-400);
@@ -804,27 +801,6 @@
     &:hover {
       @media (hover: hover) {
         fill: var(--color-silver-100);
-      }
-    }
-  }
-  .hover\:fill-silver-200 {
-    &:hover {
-      @media (hover: hover) {
-        fill: var(--color-silver-200);
-      }
-    }
-  }
-  .hover\:fill-silver-600 {
-    &:hover {
-      @media (hover: hover) {
-        fill: var(--color-silver-600);
-      }
-    }
-  }
-  .hover\:fill-silver-700 {
-    &:hover {
-      @media (hover: hover) {
-        fill: var(--color-silver-700);
       }
     }
   }
@@ -856,20 +832,6 @@
       }
     }
   }
-  .hover\:stroke-silver-200 {
-    &:hover {
-      @media (hover: hover) {
-        stroke: var(--color-silver-200);
-      }
-    }
-  }
-  .hover\:stroke-silver-400 {
-    &:hover {
-      @media (hover: hover) {
-        stroke: var(--color-silver-400);
-      }
-    }
-  }
   .hover\:stroke-slate-300 {
     &:hover {
       @media (hover: hover) {
@@ -885,11 +847,6 @@
   .dark\:fill-silver-100 {
     &:where(.dark, .dark *) {
       fill: var(--color-silver-100);
-    }
-  }
-  .dark\:stroke-silver-100 {
-    &:where(.dark, .dark *) {
-      stroke: var(--color-silver-100);
     }
   }
   .dark\:text-silver-100 {
@@ -924,6 +881,15 @@
   src: url('../assets/fonts/NectoMono-Regular.woff');
 }
 @layer base {
+  a {
+    transition-property: color, background-color, border-color, outline-color, text-decoration-color, fill, stroke, --tw-gradient-from, --tw-gradient-via, --tw-gradient-to, opacity, box-shadow, transform, translate, scale, rotate, filter, -webkit-backdrop-filter, backdrop-filter;
+    transition-timing-function: var(--tw-ease, var(--default-transition-timing-function));
+    transition-duration: var(--tw-duration, var(--default-transition-duration));
+    --tw-duration: 300ms;
+    transition-duration: 300ms;
+    --tw-ease: var(--ease-in-out);
+    transition-timing-function: var(--ease-in-out);
+  }
   a:hover {
     color: var(--color-amulet-400);
     &:where(.dark, .dark *) {
@@ -935,6 +901,15 @@
     text-decoration-style: dashed;
     text-decoration-thickness: 1px;
     text-underline-offset: 4px;
+  }
+  svg {
+    transition-property: color, background-color, border-color, outline-color, text-decoration-color, fill, stroke, --tw-gradient-from, --tw-gradient-via, --tw-gradient-to, opacity, box-shadow, transform, translate, scale, rotate, filter, -webkit-backdrop-filter, backdrop-filter;
+    transition-timing-function: var(--tw-ease, var(--default-transition-timing-function));
+    transition-duration: var(--tw-duration, var(--default-transition-duration));
+    --tw-duration: 300ms;
+    transition-duration: 300ms;
+    --tw-ease: var(--ease-in-out);
+    transition-timing-function: var(--ease-in-out);
   }
 }
 @keyframes spin {
@@ -1071,6 +1046,14 @@
   inherits: false;
 }
 @property --tw-backdrop-sepia {
+  syntax: "*";
+  inherits: false;
+}
+@property --tw-duration {
+  syntax: "*";
+  inherits: false;
+}
+@property --tw-ease {
   syntax: "*";
   inherits: false;
 }

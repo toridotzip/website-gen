@@ -42,11 +42,19 @@
 }
 
 @layer base {
+    a {
+        @apply transition duration-300 ease-in-out
+    }
+
     a:hover {
         @apply text-amulet-400 dark:text-amulet-500;
     }
     
     main a {
         @apply underline underline-offset-4 decoration-1 decoration-dashed;
+    }
+
+    svg {
+        @apply transition duration-300 ease-in-out
     }
 }
