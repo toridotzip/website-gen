@@ -615,6 +615,9 @@
   .list-none {
     list-style-type: none;
   }
+  .columns-1 {
+    columns: 1;
+  }
   .columns-2 {
     columns: 2;
   }
@@ -823,6 +826,11 @@
   .sm\:flex-1\/4 {
     @media (width >= 40rem) {
       flex: calc(1/4 * 100%);
+    }
+  }
+  .sm\:columns-2 {
+    @media (width >= 40rem) {
+      columns: 2;
     }
   }
   .sm\:columns-3 {
