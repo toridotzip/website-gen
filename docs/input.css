@@ -1,0 +1,79 @@
+@import "tailwindcss";
+
+@theme {
+    --font-mono: "Necto Mono", sans-serif;
+    --font-display: "Departure Mono", sans-serif;
+    --color-silver-50: oklch(97.91% 0 0);
+    --color-silver-100: oklch(95.51% 0 0);
+    --color-silver-200: oklch(90.37% 0 0);
+    --color-silver-300: oklch(79.21% 0 0);
+    --color-silver-400: oklch(74.76% 0 0);
+    --color-silver-500: oklch(58.63% 0 0);
+    --color-silver-600: oklch(62.68% 0 0);
+    --color-silver-700: oklch(50.86% 0 0);
+    --color-silver-800: oklch(39.42% 0 0);
+    --color-silver-900: oklch(30.71% 0 0);
+    --color-silver-950: oklch(15.91% 0 0);
+    --color-accent: oklch(63.35% 0.2004 36.11);
+    /* --color-amulet-50: oklch(97.68% 0.0045 134.85);
+    --color-amulet-100: oklch(94.91% 0.0119 133.38);
+    --color-amulet-200: oklch(89.77% 0.024 133.47);
+    --color-amulet-300: oklch(81.24% 0.0415 133.8);
+    --color-amulet-400: oklch(70.89% 0.1581 147.31);
+    --color-amulet-500: oklch(59.52% 0.0672 134.42);
+    --color-amulet-600: oklch(51.05% 0.0595 134.26);
+    --color-amulet-700: oklch(43.8% 0.0478 134.24);
+    --color-amulet-800: oklch(38.28% 0.039 135.38);
+    --color-amulet-900: oklch(33.98% 0.033 136.6);
+    --color-amulet-950: oklch(22.75% 0.0238 137.29);  */
+}
+
+@custom-variant dark (&:where(.dark, .dark *));
+
+@font-face {
+    font-family: Departure Mono;
+    font-style: normal;
+    src: url('../assets/fonts/DepartureMono-Regular.otf');
+}
+
+@font-face {
+    font-family: Necto Mono;
+    font-style: normal;
+    src: url('../assets/fonts/NectoMono-Regular.woff');
+}
+
+@layer base {
+    a {
+        @apply transition duration-300 ease-in-out
+    }
+
+    a:hover {
+        @apply text-accent dark:text-accent;
+    }
+    
+    main a {
+        @apply underline underline-offset-4 decoration-1 decoration-dashed;
+    }
+
+    svg {
+        @apply transition duration-300 ease-in-out
+    }
+}
+
+@layer components {
+    .body {
+        @apply min-h-dvh flex mx-auto max-w-2xl flex-col justify-between lowercase font-mono font-normal bg-silver-300 dark:bg-silver-950 text-silver-900 dark:text-silver-100 selection:text-accent transition-colors duration-300;
+    }
+
+    .nav {
+        @apply w-full max-w-2xl px-4 pt-2 pb-1 max-h-9 fixed flex flex-row items-center justify-between backdrop-blur-sm;
+    }
+
+    .content {
+        @apply flex flex-col items-start justify-center grow py-5 px-4 text-base;
+    }
+
+    .footer {
+        @apply px-4 pb-2 flex flex-row justify-between font-mono text-silver-700 dark:text-silver-500 text-base;
+    }
+}
