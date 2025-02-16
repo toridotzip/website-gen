@@ -10,8 +10,6 @@ if (
     themeToggleLightIcon.classList.remove("hidden");
 } else {
     themeToggleDarkIcon.classList.remove("hidden");
-    document.documentElement.classList.remove("dark");
-    localStorage.setItem("color-theme", "light");
 }
 
 var themeToggleBtn = document.getElementById("theme-toggle");
