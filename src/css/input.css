@@ -33,13 +33,13 @@
 @font-face {
     font-family: Departure Mono;
     font-style: normal;
-    src: url('../assets/fonts/DepartureMono-Regular.otf');
+    src: url('../../assets/fonts/DepartureMono-Regular.otf');
 }
 
 @font-face {
     font-family: Necto Mono;
     font-style: normal;
-    src: url('../assets/fonts/NectoMono-Regular.woff');
+    src: url('../../assets/fonts/NectoMono-Regular.woff');
 }
 
 @layer base {
